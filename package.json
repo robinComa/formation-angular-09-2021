@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "api": "json-server --watch db.json"
+    "api": "json-server --watch db.json",
+    "deploy": "ng deploy --base-href=/formation-angular-09-2021/"
   },
   "private": true,
   "dependencies": {
@@ -31,6 +32,7 @@
     "@angular/compiler-cli": "~12.2.0",
     "@types/jasmine": "~3.8.0",
     "@types/node": "^12.11.1",
+    "angular-cli-ghpages": "^1.0.0-rc.2",
     "jasmine-core": "~3.8.0",
     "json-server": "^0.16.3",
     "karma": "~6.3.0",

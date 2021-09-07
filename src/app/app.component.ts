@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
+  setLang(lang: string): void {
+    console.log(lang);
+  }
+
 }

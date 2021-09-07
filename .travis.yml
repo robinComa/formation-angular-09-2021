@@ -1,0 +1,43 @@
+dist: trusty
+sudo: false
+
+language: node_js
+node_js:
+  - "12"
+
+branches:
+  only:
+    - develop
+    - master
+
+notifications:
+  email: false
+
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
+cache:
+  directories:
+    - ./node_modules
+
+install:
+  - npm ci
+
+script:
+  - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
+
+before_deploy:
+  - npm run build -- --base-href /formation-angular-09-2021/
+  - cp dist/tp-angular/index.html dist/tp-angular/404.html
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/tp-angular
+  on:
+    branch: master

@@ -4,10 +4,39 @@
             <mat-icon>home</mat-icon>
         </a>
         <h1>
-            TP Angular
+            Gestion Vétérinaire
         </h1>
+        <span class="spacer"></span>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>language</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="setLang('en')">
+                English
+            </button>
+            <button mat-menu-item (click)="setLang('fr')">
+                Français
+            </button>
+        </mat-menu>
     </mat-toolbar-row>
 </mat-toolbar>
+
+<nav mat-tab-nav-bar>
+    <a
+        mat-tab-link
+        routerLink="/animals"
+        routerLinkActive
+        #rla="routerLinkActive"
+        [active]="rla.isActive"
+    >
+        <mat-icon>pets</mat-icon>
+        Animaux
+    </a>`
+    <a href="" target="_black" mat-tab-link>
+        <mat-icon>admin_panel_settings</mat-icon>
+        Administration
+    </a>
+</nav>
 
 <main>
     <router-outlet></router-outlet>
