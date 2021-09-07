@@ -1,0 +1,106 @@
+{
+    "common": {
+        "toolbar": {
+            "title": "Veterinary management"
+        },
+        "nav": {
+            "pets": "Pets",
+            "admin": "Admin"
+        }
+    },
+    "pets": {
+        "common": {
+            "title": "Pets managmement"
+        },
+        "item": {
+            "last-visit": "See on {{date}}",
+            "owner": {
+                "title": "Owner"
+            },
+            "action": {
+                "edit": "Edit",
+                "delete": "Delete"
+            },
+            "confirm": {
+                "title": "Delete confirmation",
+                "content": "Do you want remove {{ animal.name }} ?",
+                "action": {
+                    "cancel": "Cancel",
+                    "confirm": "Delete"
+                }
+            }
+        },
+        "form": {
+            "name": {
+                "label": "Name",
+                "placeholder": "Ex : Felix",
+                "errors": {
+                    "required": "A name is required",
+                    "minlength": "The name must have at least {{nbChar}} characters"
+                }
+            },
+            "chipped": {
+                "label": "Chipped"
+            },
+            "last-visit": {
+                "label": "Last Visit",
+                "errors": {
+                    "required": "A date is required"
+                }
+            },
+            "image": {
+                "label": "Picture",
+                "placeholder": "Ex : https://www.image.com/mon-image.jpg",
+                "errors": {
+                    "required": "A picture is required"
+                }
+            },
+            "species": {
+                "label": "Species",
+                "values": {
+                    "cat": "Cat",
+                    "dog": "Dog"
+                },
+                "errors": {
+                    "required": "Species is required"
+                }
+            },
+            "comment": {
+                "label": "Comment",
+                "placeholder": "Ex : Lorem Ipsum...",
+                "errors": {
+                    "required": "A comment is required"
+                }
+            },
+            "owner": {
+                "name": {
+                    "label": "Owner name",
+                    "placeholder": "Ex : Mr Smith",
+                    "errors": {
+                        "required": "An owner name is required"
+                    }
+                },
+                "email": {
+                    "label": "Owner email",
+                    "placeholder": "Ex : smith@gmail.com",
+                    "errors": {
+                        "required": "An owner email is required",
+                        "email": "Should be an email"
+                    }
+                },
+                "phone": {
+                    "label": "Owner phone",
+                    "placeholder": "Ex : 0675679889",
+                    "errors": {
+                        "required": "An owner phone is required"
+                    }
+                }
+            }
+        },
+        "snackbar": {
+            "create": "{{animal.name}} vient d'être créé",
+            "update": "{{animal.name}} vient d'être mis à jour",
+            "delete": "{{animal.name}} vient d'être supprimé"
+        }
+    }
+}
