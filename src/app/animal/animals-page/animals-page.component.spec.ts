@@ -1,5 +1,6 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MaterialSharedModule } from 'src/app/material-shared/material-shared.module';
 import { AnimalService } from '../shared-animal/animal.service';
 
 import { AnimalsPageComponent } from './animals-page.component';
@@ -11,7 +12,8 @@ describe('AnimalsPageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        HttpClientTestingModule
+        HttpClientTestingModule,
+        MaterialSharedModule
       ],
       declarations: [ AnimalsPageComponent ],
       providers: [AnimalService]

@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MaterialSharedModule } from 'src/app/material-shared/material-shared.module';
 
 import { DeleteConfirmationDialogComponent } from './delete-confirmation-dialog.component';
 
@@ -8,7 +10,14 @@ describe('DeleteConfirmationDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DeleteConfirmationDialogComponent ]
+      imports: [
+        MaterialSharedModule
+      ],
+      declarations: [ DeleteConfirmationDialogComponent ],
+      providers: [{
+        provide: MAT_DIALOG_DATA,
+        useValue: { name: 'Bill'}
+      }]
     })
     .compileComponents();
   });

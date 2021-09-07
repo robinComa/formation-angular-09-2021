@@ -1,6 +1,7 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { MaterialSharedModule } from 'src/app/material-shared/material-shared.module';
 import { AnimalService } from '../shared-animal/animal.service';
 
 import { AnimalPageComponent } from './animal-page.component';
@@ -13,7 +14,8 @@ describe('AnimalPageComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         HttpClientTestingModule,
-        RouterTestingModule
+        RouterTestingModule,
+        MaterialSharedModule
       ],
       declarations: [ AnimalPageComponent ],
       providers: [

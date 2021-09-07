@@ -1,7 +1,9 @@
 import { DatePipe } from '@angular/common';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
+import { MaterialSharedModule } from 'src/app/material-shared/material-shared.module';
 import { AnimalService } from '../shared-animal/animal.service';
 
 import { AnimalFormComponent } from './animal-form.component';
@@ -19,7 +21,9 @@ describe('AnimalFormComponent', () => {
       ],
       imports: [
         RouterTestingModule,
-        HttpClientTestingModule
+        HttpClientTestingModule,
+        NoopAnimationsModule,
+        MaterialSharedModule
       ]
     })
     .compileComponents();
