@@ -24,6 +24,14 @@
             "action": {
                 "edit": "Modifier",
                 "delete": "Supprimer"
+            },
+            "confirm": {
+                "title": "Confirmation de suppression",
+                "content": "Voulez vous supprimer {{ animal.name }} ?",
+                "action": {
+                    "cancel": "Annuler",
+                    "confirm": "Supprimer"
+                }
             }
         },
         "form": {
@@ -53,6 +61,10 @@
             },
             "species": {
                 "label": "Espèce",
+                "values": {
+                    "cat": "Chat",
+                    "dog": "Chien"
+                },
                 "errors": {
                     "required": "L'espèce est obligatoire'"
                 }

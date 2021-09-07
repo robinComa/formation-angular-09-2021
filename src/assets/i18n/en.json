@@ -20,6 +20,14 @@
             "action": {
                 "edit": "Edit",
                 "delete": "Delete"
+            },
+            "confirm": {
+                "title": "Delete confirmation",
+                "content": "Do you want remove {{ animal.name }} ?",
+                "action": {
+                    "cancel": "Cancel",
+                    "confirm": "Delete"
+                }
             }
         },
         "form": {
@@ -49,6 +57,10 @@
             },
             "species": {
                 "label": "Species",
+                "values": {
+                    "cat": "Cat",
+                    "dog": "Dog"
+                },
                 "errors": {
                     "required": "Species is required"
                 }

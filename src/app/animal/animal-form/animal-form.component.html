@@ -53,8 +53,12 @@
             {{ 'pets.form.species.label' | translate }}
         </mat-label>
         <mat-select formControlName="species" required>
-            <mat-option value="cat">Chat</mat-option>
-            <mat-option value="dog">Chien</mat-option>
+            <mat-option value="cat">
+                {{ 'pets.form.species.values.cat' | translate }}
+            </mat-option>
+            <mat-option value="dog">
+                {{ 'pets.form.species.values.dog' | translate }}
+            </mat-option>
         </mat-select>
         <mat-error *ngIf="isSubmitted && animalForm.get('species').errors">
             <span *ngIf="animalForm.get('species').errors.required">
