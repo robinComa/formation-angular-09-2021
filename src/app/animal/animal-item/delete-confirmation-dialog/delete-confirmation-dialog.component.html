@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>Confirmation de suppression</h2>
+<mat-dialog-content class="mat-typography">
+  <p>
+      Voulez vous supprimer "{{ animal.name }}" ?
+  </p>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button [mat-dialog-close]="false" cdkFocusInitial>
+      Anuller
+  </button>
+  <button mat-button color="warn" [mat-dialog-close]="true">
+      Confirmer
+  </button>
+</mat-dialog-actions>

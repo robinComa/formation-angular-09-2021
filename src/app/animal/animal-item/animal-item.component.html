@@ -1,0 +1,46 @@
+<mat-card *ngIf="animal">
+    <mat-card-header>
+        <div mat-card-avatar class="header-image" [style.backgroundImage]="'url('+animal.image"></div>
+        <mat-card-title>
+        {{ animal.name }} ({{animal.species}})
+        </mat-card-title>
+        <mat-card-subtitle>
+        Vu le {{ animal.lastVisit | date:'mediumDate' }}
+        </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="animal.image">
+    <mat-card-content>
+        <p> {{ animal.comment }} </p>
+        <mat-divider></mat-divider>
+        <mat-list>
+            <h3 matSubheader>Propriétaire</h3>
+            <mat-list-item>
+                <mat-icon matListIcon>contact_page</mat-icon>
+                <h4 matLine>{{animal.owner.name}}</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon matListIcon>contact_mail</mat-icon>
+                <h4 matLine>
+                    <a appMailto>{{ animal.owner.email }}</a>
+                </h4>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon matListIcon>contact_phone</mat-icon>
+                <h4 matLine>
+                    <a [href]="'tel:' + animal.owner.phone">
+                        {{ animal.owner.phone }}
+                    </a>
+                </h4>
+            </mat-list-item>
+        </mat-list>
+        <mat-divider></mat-divider>
+    </mat-card-content>
+    <mat-card-actions>
+        <a color="primary" mat-stroked-button [routerLink]="['..', 'form', animal.id]">
+            Modifier
+        </a>
+        <button color="warn" mat-stroked-button (click)="delete()">
+            Supprimer
+        </button>
+    </mat-card-actions>
+</mat-card>
