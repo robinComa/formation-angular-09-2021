@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { TranslateModule } from '@ngx-translate/core';
 import { MaterialSharedModule } from 'src/app/material-shared/material-shared.module';
 
 import { DeleteConfirmationDialogComponent } from './delete-confirmation-dialog.component';
@@ -11,7 +12,8 @@ describe('DeleteConfirmationDialogComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        MaterialSharedModule
+        MaterialSharedModule,
+        TranslateModule.forRoot()
       ],
       declarations: [ DeleteConfirmationDialogComponent ],
       providers: [{
