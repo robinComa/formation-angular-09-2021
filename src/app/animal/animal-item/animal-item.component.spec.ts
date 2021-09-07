@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TranslateModule } from '@ngx-translate/core';
 import { MaterialSharedModule } from 'src/app/material-shared/material-shared.module';
 
 import { AnimalItemComponent } from './animal-item.component';
@@ -10,7 +11,8 @@ describe('AnimalItemComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        MaterialSharedModule
+        MaterialSharedModule,
+        TranslateModule.forRoot()
       ],
       declarations: [ AnimalItemComponent ]
     })

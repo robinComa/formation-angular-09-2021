@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { AnimalService } from './animal.service';
 import { MaterialSharedModule } from 'src/app/material-shared/material-shared.module';
@@ -11,7 +12,8 @@ describe('AnimalService', () => {
     TestBed.configureTestingModule({
       imports: [
         HttpClientTestingModule,
-        MaterialSharedModule
+        MaterialSharedModule,
+        TranslateModule.forRoot()
       ],
       providers: [AnimalService]
     });

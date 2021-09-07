@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { AnimalRoutingModule } from './animal-routing.module';
 import { AnimalItemComponent } from './animal-item/animal-item.component';
@@ -27,6 +28,7 @@ import { DeleteConfirmationDialogComponent } from './animal-item/delete-confirma
     CommonModule,
     HttpClientModule,
     ReactiveFormsModule,
+    TranslateModule,
     AnimalRoutingModule,
     MaterialSharedModule,
     SharedAnimalModule

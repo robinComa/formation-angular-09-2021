@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { AnimalLayoutComponent } from './animal-layout.component';
 
@@ -8,6 +9,9 @@ describe('AnimalLayoutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [
+        TranslateModule.forRoot()
+      ],
       declarations: [ AnimalLayoutComponent ]
     })
     .compileComponents();

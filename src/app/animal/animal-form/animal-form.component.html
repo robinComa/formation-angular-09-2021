@@ -1,86 +1,118 @@
 <form (submit)="onSubmit()" [formGroup]="animalForm">
 
     <mat-form-field appearance="fill">
-        <mat-label>Nom</mat-label>
-        <input formControlName="name" matInput placeholder="Ex : Bill" required minlength="2">
+        <mat-label>
+            {{ 'pets.form.name.label' | translate }}
+        </mat-label>
+        <input formControlName="name" matInput [placeholder]="'pets.form.name.placeholder' | translate" required minlength="2">
         <mat-error *ngIf="isSubmitted && animalForm.get('name').errors">
-            <span *ngIf="animalForm.get('name').errors.required">Ce champ est obligatoire</span>
+            <span *ngIf="animalForm.get('name').errors.required">
+                {{ 'pets.form.name.errors.required' | translate }}
+            </span>
             <span *ngIf="animalForm.get('name').errors.minlength">
-                Ce champ doit avoir au moins 
-                {{ animalForm.get('name').errors.minlength.requiredLength }}
+                {{ 'pets.form.name.errors.minlength' | translate:{nbChar: animalForm.get('name').errors.minlength.requiredLength} }}
                 caractères
             </span>
         </mat-error>
     </mat-form-field>
 
     <div>
-        <mat-checkbox formControlName="chipped">Pucé</mat-checkbox>
-        <mat-error *ngIf="isSubmitted && animalForm.get('chipped').errors">
-            <span *ngIf="animalForm.get('chipped').errors.required">Ce champ est obligatoire</span>
-        </mat-error>
+        <mat-checkbox formControlName="chipped">
+            {{ 'pets.form.chipped.label' | translate }}
+        </mat-checkbox>
     </div>
 
     <mat-form-field appearance="fill">
-        <mat-label>Dernière visite</mat-label>
+        <mat-label>
+            {{ 'pets.form.last-visit.label' | translate }}
+        </mat-label>
         <input formControlName="lastVisit" matInput [matDatepicker]="picker" required>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
         <mat-error *ngIf="isSubmitted && animalForm.get('lastVisit').errors">
-            <span *ngIf="animalForm.get('lastVisit').errors.required">Ce champ est obligatoire</span>
+            <span *ngIf="animalForm.get('lastVisit').errors.required">
+                {{ 'pets.form.last-visit.errors.required' | translate }}
+            </span>
         </mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-        <mat-label>Photo</mat-label>
-        <input formControlName="image" matInput type="url" placeholder="Ex : https://www.image.com/mon-chat" required>
+        <mat-label>
+            {{ 'pets.form.image.label' | translate }}
+        </mat-label>
+        <input formControlName="image" matInput type="url" [placeholder]="'pets.form.image.placeholder' | translate" required>
         <mat-error *ngIf="isSubmitted && animalForm.get('image').errors">
-            <span *ngIf="animalForm.get('image').errors.required">Ce champ est obligatoire</span>
+            <span *ngIf="animalForm.get('image').errors.required">
+                {{ 'pets.form.image.errors.required' | translate }}
+            </span>
         </mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-        <mat-label>Espèce</mat-label>
+        <mat-label>
+            {{ 'pets.form.species.label' | translate }}
+        </mat-label>
         <mat-select formControlName="species" required>
             <mat-option value="cat">Chat</mat-option>
             <mat-option value="dog">Chien</mat-option>
         </mat-select>
         <mat-error *ngIf="isSubmitted && animalForm.get('species').errors">
-            <span *ngIf="animalForm.get('species').errors.required">Ce champ est obligatoire</span>
+            <span *ngIf="animalForm.get('species').errors.required">
+                {{ 'pets.form.species.errors.required' | translate }}
+            </span>
         </mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-        <mat-label>Commentaire</mat-label>
-        <textarea formControlName="comment" matInput placeholder="Ex. Lorem Ipsum..." required></textarea>
+        <mat-label>
+            {{ 'pets.form.comment.label' | translate }}
+        </mat-label>
+        <textarea formControlName="comment" matInput [placeholder]="'pets.form.comment.placeholder' | translate" required></textarea>
         <mat-error *ngIf="isSubmitted && animalForm.get('comment').errors">
-            <span *ngIf="animalForm.get('comment').errors.required">Ce champ est obligatoire</span>
+            <span *ngIf="animalForm.get('comment').errors.required">
+                {{ 'pets.form.comment.errors.required' | translate }}
+            </span>
         </mat-error>
     </mat-form-field>
 
     <ng-container formGroupName="owner">
 
         <mat-form-field appearance="fill">
-            <mat-label>Nom du propriétaire</mat-label>
-            <input formControlName="name" matInput type="text" placeholder="Ex : Mr Smith" required/>
+            <mat-label>
+                {{ 'pets.form.owner.name.label' | translate }}
+            </mat-label>
+            <input formControlName="name" matInput type="text" [placeholder]="'pets.form.owner.name.placeholder' | translate" required/>
             <mat-error *ngIf="isSubmitted && animalForm.get('owner').get('name').errors">
-                <span *ngIf="animalForm.get('owner').get('name').errors.required">Ce champ est obligatoire</span>
+                <span *ngIf="animalForm.get('owner').get('name').errors.required">
+                    {{ 'pets.form.owner.name.errors.required' | translate }}
+                </span>
             </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-            <mat-label>Email du propriétaire</mat-label>
-            <input formControlName="email" matInput type="email" placeholder="Ex : smith@gmail.com" required/>
+            <mat-label>
+                {{ 'pets.form.owner.email.label' | translate }}
+            </mat-label>
+            <input formControlName="email" matInput type="email" [placeholder]="'pets.form.owner.email.placeholder' | translate" required/>
             <mat-error *ngIf="isSubmitted && animalForm.get('owner').get('email').errors">
-                <span *ngIf="animalForm.get('owner').get('email').errors.required">Ce champ est obligatoire</span>
-                <span *ngIf="animalForm.get('owner').get('email').errors.email">Ce champ doit être un email</span>
+                <span *ngIf="animalForm.get('owner').get('email').errors.required">
+                    {{ 'pets.form.owner.email.errors.required' | translate }}
+                </span>
+                <span *ngIf="animalForm.get('owner').get('email').errors.email">
+                    {{ 'pets.form.owner.email.errors.email' | translate }}
+                </span>
             </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-            <mat-label>Téléphone du propriétaire</mat-label>
-            <input formControlName="phone" matInput type="tel" placeholder="Ex : 0675675645" required/>
+            <mat-label>
+                {{ 'pets.form.owner.phone.label' | translate }}
+            </mat-label>
+            <input formControlName="phone" matInput type="tel" [placeholder]="'pets.form.owner.phone.placeholder' | translate" required/>
             <mat-error *ngIf="isSubmitted && animalForm.get('owner').get('phone').errors">
-                <span *ngIf="animalForm.get('owner').get('phone').errors.required">Ce champ est obligatoire</span>
+                <span *ngIf="animalForm.get('owner').get('phone').errors.required">
+                    {{ 'pets.form.owner.phone.errors.required' | translate }}
+                </span>
             </mat-error>
         </mat-form-field>
     

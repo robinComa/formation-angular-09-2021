@@ -3,6 +3,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
+import { TranslateModule } from '@ngx-translate/core';
 import { MaterialSharedModule } from 'src/app/material-shared/material-shared.module';
 import { AnimalService } from '../shared-animal/animal.service';
 
@@ -23,7 +24,8 @@ describe('AnimalFormComponent', () => {
         RouterTestingModule,
         HttpClientTestingModule,
         NoopAnimationsModule,
-        MaterialSharedModule
+        MaterialSharedModule,
+        TranslateModule.forRoot()
       ]
     })
     .compileComponents();

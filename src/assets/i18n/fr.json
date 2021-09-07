@@ -1,0 +1,98 @@
+{
+    "common": {
+        "toolbar": {
+            "title": "Gestion vétérinaire",
+            "lang": {
+                "en": "English",
+                "fr": "Français"
+            }
+        },
+        "nav": {
+            "pets": "Animaux",
+            "admin": "Administration"
+        }
+    },
+    "pets": {
+        "common": {
+            "title": "Gestion des animaux"
+        },
+        "item": {
+            "last-visit": "Vu le {{date}}",
+            "owner": {
+                "title": "Propriétaire"
+            },
+            "action": {
+                "edit": "Modifier",
+                "delete": "Supprimer"
+            }
+        },
+        "form": {
+            "name": {
+                "label": "Nom",
+                "placeholder": "Ex : Felix",
+                "errors": {
+                    "required": "Le nom est obligatoire",
+                    "minlength": "Le nom doit avoir au moins {{nbChar}} caractères"
+                }
+            },
+            "chipped": {
+                "label": "Pucé"
+            },
+            "last-visit": {
+                "label": "Dernière visite",
+                "errors": {
+                    "required": "La date est obligatoire"
+                }
+            },
+            "image": {
+                "label": "Photo",
+                "placeholder": "Ex : https://www.image.com/mon-image.jpg",
+                "errors": {
+                    "required": "La photo est obligatoire"
+                }
+            },
+            "species": {
+                "label": "Espèce",
+                "errors": {
+                    "required": "L'espèce est obligatoire'"
+                }
+            },
+            "comment": {
+                "label": "Commentaire",
+                "placeholder": "Ex : Lorem Ipsum...",
+                "errors": {
+                    "required": "Un commentaire est obligatoire"
+                }
+            },
+            "owner": {
+                "name": {
+                    "label": "Nom du propriétaire",
+                    "placeholder": "Ex : Mr Smith",
+                    "errors": {
+                        "required": "Un nom de propriétaire est obligatoire"
+                    }
+                },
+                "email": {
+                    "label": "Email du propriétaire",
+                    "placeholder": "Ex : smith@gmail.com",
+                    "errors": {
+                        "required": "Le mail du propriétaire est obligatoire",
+                        "email": "Le champ doit être un email"
+                    }
+                },
+                "phone": {
+                    "label": "Téléphone du propriétaire",
+                    "placeholder": "Ex : 0675679889",
+                    "errors": {
+                        "required": "Le téléphone du propriétaire est obligatoire"
+                    }
+                }
+            }
+        },
+        "snackbar": {
+            "create": "{{animal.name}} vient d'être créé",
+            "update": "{{animal.name}} vient d'être mis à jour",
+            "delete": "{{animal.name}} vient d'être supprimé"
+        }
+    }
+}

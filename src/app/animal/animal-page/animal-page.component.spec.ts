@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MaterialSharedModule } from 'src/app/material-shared/material-shared.module';
 import { AnimalService } from '../shared-animal/animal.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { AnimalPageComponent } from './animal-page.component';
 
@@ -15,7 +16,8 @@ describe('AnimalPageComponent', () => {
       imports: [
         HttpClientTestingModule,
         RouterTestingModule,
-        MaterialSharedModule
+        MaterialSharedModule,
+        TranslateModule.forRoot()
       ],
       declarations: [ AnimalPageComponent ],
       providers: [

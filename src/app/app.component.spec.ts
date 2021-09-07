@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { TranslateModule } from '@ngx-translate/core';
 import { AppComponent } from './app.component';
 import { MaterialSharedModule } from './material-shared/material-shared.module';
 
@@ -8,11 +9,12 @@ describe('AppComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        MaterialSharedModule
+        MaterialSharedModule,
+        TranslateModule.forRoot()
       ],
       declarations: [
         AppComponent
-      ],
+      ]
     }).compileComponents();
   });
 

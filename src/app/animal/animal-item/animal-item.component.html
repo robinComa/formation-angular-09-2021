@@ -5,7 +5,7 @@
         {{ animal.name }} ({{animal.species}})
         </mat-card-title>
         <mat-card-subtitle>
-        Vu le {{ animal.lastVisit | date:'mediumDate' }}
+            {{ 'pets.item.last-visit' | translate:{ date: animal.lastVisit | date:'mediumDate' } }}
         </mat-card-subtitle>
     </mat-card-header>
     <img mat-card-image [src]="animal.image">
@@ -13,7 +13,7 @@
         <p> {{ animal.comment }} </p>
         <mat-divider></mat-divider>
         <mat-list>
-            <h3 matSubheader>Propriétaire</h3>
+            <h3 matSubheader>{{ 'pets.item.owner.title' | translate }}</h3>
             <mat-list-item>
                 <mat-icon matListIcon>contact_page</mat-icon>
                 <h4 matLine>{{animal.owner.name}}</h4>
@@ -37,10 +37,10 @@
     </mat-card-content>
     <mat-card-actions align="end">
         <a color="primary" mat-stroked-button [routerLink]="['..', 'form', animal.id]">
-            Modifier
+            {{ 'pets.item.action.edit' | translate }}
         </a>
         <button color="warn" mat-stroked-button (click)="delete()">
-            Supprimer
+            {{ 'pets.item.action.delete' | translate }}
         </button>
     </mat-card-actions>
 </mat-card>

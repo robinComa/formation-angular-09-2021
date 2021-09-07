@@ -4,7 +4,7 @@
             <mat-icon>home</mat-icon>
         </a>
         <h1>
-            Gestion Vétérinaire
+            {{ 'common.toolbar.title' | translate }}
         </h1>
         <span class="spacer"></span>
         <button mat-icon-button [matMenuTriggerFor]="menu">
@@ -12,10 +12,10 @@
         </button>
         <mat-menu #menu="matMenu">
             <button mat-menu-item (click)="setLang('en')">
-                English
+                {{ 'common.toolbar.lang.en' | translate }}
             </button>
             <button mat-menu-item (click)="setLang('fr')">
-                Français
+                {{ 'common.toolbar.lang.fr' | translate }}
             </button>
         </mat-menu>
     </mat-toolbar-row>
@@ -30,11 +30,11 @@
         [active]="rla.isActive"
     >
         <mat-icon>pets</mat-icon>
-        Animaux
+        {{ 'common.nav.pets' | translate }}
     </a>`
     <a href="" target="_black" mat-tab-link>
         <mat-icon>admin_panel_settings</mat-icon>
-        Administration
+        {{ 'common.nav.admin' | translate }}
     </a>
 </nav>
 
